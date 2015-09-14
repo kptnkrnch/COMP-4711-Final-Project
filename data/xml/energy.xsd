@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <!-- DECLARATION OF SIMPLE TYPES -->  
+    
+    <!-- Restriction for source attribute, must be a string of characters -->     
+    <xs:simpleType name="Tsource">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Restriction for year attribute, must be 4 integers and later than
+         1900    -->
+    <xs:simpleType name="Tyear">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[0-9]{4}"/>
+            <xs:minInclusive value="1900"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Restriction for ENERGY element, must a number greater than 0.0 -->   
+    <xs:simpleType name="Tenergy">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0.0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- DECLARATION OF XML DOCUMENT STRUCTURE -->
+    
+    <!-- ROOT ELEMENT, contains ENERGYPRODUCED and ENERGYUSED, must have 1 of each -->
+    <xs:element name="ENERGYCONSUMPTION">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ENERGYPRODUCED" maxOccurs="1" minOccurs="1" />
+                <xs:element ref="ENERGYUSED" maxOccurs="1" minOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- ENERGYPRODUCED ELEMENT, contains many TYPE elements -->
+    <xs:element name="ENERGYPRODUCED">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="TYPE" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- ENERGYUSED ELEMENT, contains RESIDENTIAL and INDUSTRIAL, 1 of each -->
+    <xs:element name="ENERGYUSED">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="RESIDENTIAL" maxOccurs="1" minOccurs="1" />
+                <xs:element ref="INDUSTRIAL" maxOccurs="1" minOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- TYPE ELEMENT, contains YEAR elements, 0 to many.
+         Has a source attribute that is a string of characters    -->
+    <xs:element name="TYPE">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="YEAR" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="source" type="Tsource" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- YEAR ELEMENT, contains an ENERGY element, only 1.
+         Has a year attribute that consists of 4 integer digits ie 2000  -->
+    <xs:element name="YEAR">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ENERGY" maxOccurs="1" type="Tenergy"/>
+            </xs:sequence>
+            <xs:attribute name="year" type="Tyear" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- RESIDENTIAL ELEMENT, contains TYPE elements, 0 to many. -->
+    <xs:element name="RESIDENTIAL">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="TYPE" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- INDUSTRIAL ELEMENT, contains TYPE elements, 0 to many. -->
+    <xs:element name="INDUSTRIAL">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="TYPE" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

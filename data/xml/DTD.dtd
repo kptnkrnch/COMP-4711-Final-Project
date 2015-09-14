@@ -1,0 +1,20 @@
+<!--Root element, contains ENERGYPRODUCED and ENERGYUSED elements-->
+<!ELEMENT ENERGYCONSUMPTION (ENERGYPRODUCED, ENERGYUSED)>
+<!--ENERGYPRODUCED element, only contains TYPE elements (can be 0 to many)-->
+<!ELEMENT ENERGYPRODUCED (TYPE*)>
+<!--ENERGYUSED element, contains RESIDENTIAL and INDUSTRIAL elements-->
+<!ELEMENT ENERGYUSED (RESIDENTIAL, INDUSTRIAL)>
+<!--RESIDENTIAL element, only contains TYPE elements (can be 0 to many)-->
+<!ELEMENT RESIDENTIAL (TYPE*)>
+<!--INDUSTRIAL element, only contains TYPE elements (can be 0 to many)-->
+<!ELEMENT INDUSTRIAL (TYPE*)>
+<!--TYPE element, onyl contains YEAR elements (can be 0 to many)-->
+<!ELEMENT TYPE (YEAR*)>
+<!--source attribute for TYPE, can be of certain types, required-->
+<!ATTLIST TYPE source (Commercial-and-other-institutional|Public-Administration|Agriculture|Total-Transportation|Total-Industrial|Residential|Imports|Exports) #REQUIRED>
+<!--YEAR element, contains ENERGY-->
+<!ELEMENT YEAR (ENERGY)>
+<!--year attribute for YEAR, contains a year, required-->
+<!ATTLIST YEAR year CDATA #REQUIRED>
+<!--ENERGY element, contains energy data-->
+<!ELEMENT ENERGY (#PCDATA)>

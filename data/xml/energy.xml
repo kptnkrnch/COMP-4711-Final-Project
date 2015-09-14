@@ -1,0 +1,151 @@
+<!--<!DOCTYPE ENERGYCONSUMPTION SYSTEM "DTD.dtd">-->
+<!-- http://www.statcan.gc.ca/tables-tableaux/sum-som/l01/cst01/prim71-eng.htm -->
+<!--<?xml-stylesheet type='text/xsl' href='energy.xsl'?>-->
+
+<ENERGYCONSUMPTION xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="energy.xsd">
+    <ENERGYPRODUCED><!-- Measured in Petajoules -->
+        <TYPE source="Exports">
+            <YEAR year="2005">
+                <ENERGY>8662.2</ENERGY>
+            </YEAR>
+            <YEAR year="2006">
+                <ENERGY>8898.6</ENERGY>
+            </YEAR>
+            <YEAR year="2007">
+                <ENERGY>9331.0</ENERGY>
+            </YEAR>
+            <YEAR year="2008">
+                <ENERGY>9301.6</ENERGY>
+            </YEAR>
+            <YEAR year="2009">
+                <ENERGY>7902.0</ENERGY>
+            </YEAR>
+        </TYPE>
+        <TYPE source="Imports">
+            <YEAR year="2005">
+                <ENERGY>3139.2</ENERGY>
+            </YEAR>
+            <YEAR year="2006">
+                <ENERGY>2977.4</ENERGY>
+            </YEAR>
+            <YEAR year="2007">
+                <ENERGY>3124.1</ENERGY>
+            </YEAR>
+            <YEAR year="2008">
+                <ENERGY>3010.4</ENERGY>
+            </YEAR>
+            <YEAR year="2009">
+                <ENERGY>2944.8</ENERGY>
+            </YEAR>
+        </TYPE>
+    </ENERGYPRODUCED>
+    <ENERGYUSED><!-- Measured in Petajoules -->
+        <RESIDENTIAL>
+            <TYPE source="Residential">
+                <YEAR year="2005">
+                    <ENERGY>1296.6</ENERGY>
+                </YEAR>
+                <YEAR year="2006">
+                    <ENERGY>1243.4</ENERGY>
+                </YEAR>
+                <YEAR year="2007">
+                    <ENERGY>1336.5</ENERGY>
+                </YEAR>
+                <YEAR year="2008">
+                    <ENERGY>1356.3</ENERGY>
+                </YEAR>
+                <YEAR year="2009">
+                    <ENERGY>1316.2</ENERGY>
+                </YEAR>
+            </TYPE>
+        </RESIDENTIAL>
+        <INDUSTRIAL>
+            <TYPE source="TotalIndustrial">
+                <YEAR year="2005">
+                    <ENERGY>2312.8</ENERGY>
+                </YEAR>
+                <YEAR year="2006">
+                    <ENERGY>2314.0</ENERGY>
+                </YEAR>
+                <YEAR year="2007">
+                    <ENERGY>2450.7</ENERGY>
+                </YEAR>
+                <YEAR year="2008">
+                    <ENERGY>2280.2</ENERGY>
+                </YEAR>
+                <YEAR year="2009">
+                    <ENERGY>2244.7</ENERGY>
+                </YEAR>
+            </TYPE>
+            <TYPE source="TotalTransportation">
+                <YEAR year="2005">
+                    <ENERGY>2388.8</ENERGY>
+                </YEAR>
+                <YEAR year="2006">
+                    <ENERGY>2372.3</ENERGY>
+                </YEAR>
+                <YEAR year="2007">
+                    <ENERGY>2484.0</ENERGY>
+                </YEAR>
+                <YEAR year="2008">
+                    <ENERGY>2429.2</ENERGY>
+                </YEAR>
+                <YEAR year="2009">
+                    <ENERGY>2396.3</ENERGY>
+                </YEAR>
+            </TYPE>
+            <TYPE source="Agriculture">
+                <YEAR year="2005">
+                    <ENERGY>208.5</ENERGY>
+                </YEAR>
+                <YEAR year="2006">
+                    <ENERGY>211.4</ENERGY>
+                </YEAR>
+                <YEAR year="2007">
+                    <ENERGY>215.6</ENERGY>
+                </YEAR>
+                <YEAR year="2008">
+                    <ENERGY>217.7</ENERGY>
+                </YEAR>
+                <YEAR year="2009">
+                    <ENERGY>190.0</ENERGY>
+                </YEAR>
+            </TYPE>
+            <TYPE source="PublicAdministration">
+                <YEAR year="2005">
+                    <ENERGY>136.1</ENERGY>
+                </YEAR>
+                <YEAR year="2006">
+                    <ENERGY>127.6</ENERGY>
+                </YEAR>
+                <YEAR year="2007">
+                    <ENERGY>122.1</ENERGY>
+                </YEAR>
+                <YEAR year="2008">
+                    <ENERGY>122.5</ENERGY>
+                </YEAR>
+                <YEAR year="2009">
+                    <ENERGY>121.8</ENERGY>
+                </YEAR>
+            </TYPE>
+            <TYPE source="CommercialAndOtherInstitutional">
+                <YEAR year="2005">
+                    <ENERGY>1346.1</ENERGY>
+                </YEAR>
+                <YEAR year="2006">
+                    <ENERGY>1283.8</ENERGY>
+                </YEAR>
+                <YEAR year="2007">
+                    <ENERGY>1349.7</ENERGY>
+                </YEAR>
+                <YEAR year="2008">
+                    <ENERGY>1396.4</ENERGY>
+                </YEAR>
+                <YEAR year="2009">
+                    <ENERGY>1380.8</ENERGY>
+                </YEAR>
+            </TYPE>
+        </INDUSTRIAL>
+    </ENERGYUSED>
+</ENERGYCONSUMPTION>
